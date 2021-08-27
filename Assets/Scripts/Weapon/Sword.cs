@@ -16,6 +16,8 @@ public class Sword : MonoBehaviour
 
     AnimCtrl AnimCtrlInst;
 
+    public int RageValue = 30;
+
     public void OnStart(AnimCtrl AC) 
     {
         AnimCtrlInst = AC;
@@ -76,10 +78,11 @@ public class Sword : MonoBehaviour
 
         if (enemyActor != null) 
         {
+            Debug.Log("Hit");
             enemyActor.GetHit();
-
+            
             //player increase rage value
-            AnimCtrlInst.OnModifyFSvalue();
+            AnimCtrlInst.OnModifyFSvalue(RageValue);
 
         }
     }

@@ -25,20 +25,22 @@ public class UI_JoyStick : MonoBehaviour
     #region Rage Slide
 
     public Slider SliderInst;
-    int RageIncrease = 50;
     public Image HighLight1;
     public Image HighLight2;
-    public bool ShowFinalSkillBtn => (SliderInst.value > 100);
+    public bool ShowFinalSkillBtn => (SliderInst.value >= 100);
 
 
-    public void OnModifyFSV() 
+    public void OnModifyFSV(int value) 
     {
         var RageValue = SliderInst.value;
 
-        SliderInst.value += RageIncrease;
+        SliderInst.value += value;
+        HighLight2.enabled = false;
+        HighLight1.enabled = false;
         if (SliderInst.value >= 200)
         {
             HighLight2.enabled = true;
+            HighLight1.enabled = true;
         }
         else if (SliderInst.value >= 100) 
         {

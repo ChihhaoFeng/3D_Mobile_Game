@@ -822,7 +822,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.6924769
+      - time: 0.595122
         functionName: EventSkillReady
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -1110,7 +1110,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.7182443
+      - time: 0.5691058
         functionName: EventSkillReady
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -1398,7 +1398,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.79556644
+      - time: 0.6764228
         functionName: EventSkillReady
         data: 
         objectReferenceParameter: {instanceID: 0}

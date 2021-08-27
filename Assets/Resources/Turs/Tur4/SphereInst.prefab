@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8507710688457186588}
   - component: {fileID: 8507710688457186591}
   - component: {fileID: 8507710688457186560}
-  - component: {fileID: 7417145193458824987}
+  - component: {fileID: 8507710688457186563}
   m_Layer: 0
   m_Name: SphereInst
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7417145193458824987
+--- !u!114 &8507710688457186563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,10 +125,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8507710688457186590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e04af3760d9908045a353f2cf2c2cd91, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fbc129ac09dd124db8dba6980addba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
-  Duration: 2
-  MinWait: 2
-  MaxWait: 7
+  DelayMax: 5
+  DelayMin: 2.5
+  Bullet: {fileID: 9025836110026442890, guid: 93441bab82d50a8468b81ac2521c6981, type: 3}

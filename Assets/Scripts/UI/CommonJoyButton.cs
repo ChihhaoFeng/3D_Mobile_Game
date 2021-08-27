@@ -6,12 +6,27 @@ using AttackTypeDefine;
 
 public class CommonJoyButton : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
+    #region System
+
+    private void Awake()
+    {
+        PressDown = new GameBtnEvent();
+        OnDragEvent = new GameBtnEvent();
+        PressUp = new GameBtnEvent();
+    }
+
+    #endregion
+
     #region Joy Stick Event Callback
 
     public Image ImageBackGround;
     public Image ImageHandle;
     public Vector3 HandleOriginPoint;
 
+
+    public GameBtnEvent PressDown;
+    public GameBtnEvent OnDragEvent;
+    public GameBtnEvent PressUp;
 
     public float MaxRadius;
 
@@ -20,12 +35,6 @@ public class CommonJoyButton : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
     Vector3 PointDownPos;
     int FingerID = int.MinValue;
-
-    private void Start()
-    {
-        //Vector3 origin = ImageBackGround.transform.position;
-        
-    }
 
 
     public void OnPointerDown(PointerEventData eventData)
@@ -36,6 +45,8 @@ public class CommonJoyButton : MonoBehaviour, IPointerDownHandler, IDragHandler,
         }
 
         ImageBackGround.transform.position = PointDownPos = eventData.position;
+
+        PressDown?.Invoke(eventData);
 
     }
     public void OnDrag(PointerEventData eventData)
@@ -64,8 +75,8 @@ public class CommonJoyButton : MonoBehaviour, IPointerDownHandler, IDragHandler,
         _Dir = ImageHandle.transform.localPosition.normalized;
 
 
-
-}
+        OnDragEvent?.Invoke(eventData);
+    }
 
 
     public void OnPointerUp(PointerEventData eventData)
@@ -81,6 +92,7 @@ public class CommonJoyButton : MonoBehaviour, IPointerDownHandler, IDragHandler,
         ImageHandle.transform.localPosition = Vector3.zero;
         _Dir = Vector3.zero;
 
+        PressUp?.Invoke(eventData);
     }
     #endregion
 }

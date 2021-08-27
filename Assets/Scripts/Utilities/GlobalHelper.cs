@@ -38,5 +38,20 @@ public class GlobalHelper : MonoBehaviour
 
 
         return null;
-    } 
+    }   // find the gameobject in hierarchy
+
+    public static GameObject InstantiateMyPrefab(string path, Vector3 pos, Quaternion rot ) 
+    {
+        var obj = Resources.Load(path);
+
+        var go = Object.Instantiate(obj) as GameObject;
+
+        go.name = obj.name; //rename it, becasue when you instantiate it, it will have a prefix as clone
+
+        go.transform.position = pos;
+        go.transform.rotation = rot;
+        go.transform.localScale = Vector3.one;
+
+        return go;
+    }
 }
